@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+background-color: #e3e3e3;
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+input[type=radio],input[type=checkbox] {
+  accent-color: rgb(249, 0, 183);
+}
+
+.has-submenu::after{
+position: absolute;
+content: "\00BB";
+right: 0;
+top: 0;
+color: #fff;
+transform: rotate(90deg);
+}
+
+.breadcrumb{
+  display: flex;
+  gap: 20px;
+}
+.breadcrumb li::after {
+  position: absolute;
+  content: "\00BB";
+  right: -15px;
+  top: 0;
+}
+.breadcrumb li:last-child:after{
+  display: none;
+}
+.active .list{
+  font-weight: 600;
+  color: #fabdff;
+  
+}
+.active .list ul li span{
+  font-size: 14px!important;
+}
+.hasMenu{
+  position: relative;
+}
+.hasMenu:after{
+  content:"\00AB";
+  position: absolute;
+right: 0;
+top: 18px;
+color:#fff;
+transform: rotate(270deg);
+}
+
+
+@media (max-width:767px){
+
+}
