@@ -108,7 +108,7 @@ const Signup = () => {
             <p className="font-semibold text-slate-800">
               {" "}
               Create An Account?{" "}
-              <Link href="/" className="text-sky-500">
+              <Link href="/signup" className="text-sky-500">
                 {" "}
                 Click Here{" "}
               </Link>{" "}

@@ -10,14 +10,27 @@ const Dashboard = () => {
       <Breadcrumb name="Dashboard" />
       {/* Card Design  */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-<CardDash dynaClass="bg-purple-100" totalNumber="20" title="Total Users"/>
-<CardDash dynaClass="bg-pink-100" totalNumber="20" title="Total Pages"/>
-<CardDash dynaClass="bg-teal-100" totalNumber="20" title="Total Posts"/>
-<CardDash dynaClass="bg-orange-100" totalNumber="20" title="Total Categories"/>
-
-   
+        <CardDash
+          dynaClass="bg-purple-100"
+          totalNumber="20"
+          title="Total Users"
+        />
+        <CardDash
+          dynaClass="bg-pink-100"
+          totalNumber="20"
+          title="Total Pages"
+        />
+        <CardDash
+          dynaClass="bg-teal-100"
+          totalNumber="20"
+          title="Total Posts"
+        />
+        <CardDash
+          dynaClass="bg-orange-100"
+          totalNumber="20"
+          title="Total Categories"
+        />
       </div>
-     
 
       <div className="mt-8 mb-5">
         <div className="flex justify-between my-3 items-center">
