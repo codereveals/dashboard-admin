@@ -202,10 +202,10 @@ const Dashboard = () => {
                   />
                 </td>
                 <td className="px-1 py-4 text-sm font-normal text-[#637381]">
-                  tara
+                  komal
                 </td>
                 <td className="px-1 py-4 text-sm font-normal text-[#637381]">
-                  tara@gmail.com
+                  komal@gmail.com
                 </td>
                 <td className="px-2.5 py-4 text-sm font-normal text-[#637381]">
                   User
