@@ -1,10 +1,17 @@
+
+
 import Image from "next/image";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
-const Signup = () => {
+import Link from "next/link";
+import { signIn, auth } from "@/utils/auth";
+
+const Login = async () => {
+  const session = await auth();
+  console.log(session);
+
   return (
     <div className="h-screen flex gap-8 items-center ">
       <div className="hidden md:flex items-center justify-center w-full md:w-[60%]">
@@ -46,13 +53,21 @@ const Signup = () => {
             </span>{" "}
             Login With Google
           </button>
-          <button className="inline-flex justify-center rounded-lg text-sm items-center font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700  md:ml-8">
-            {" "}
-            <span className="pe-1">
-              <FaFacebook />
-            </span>
-            Login With Facebook
-          </button>
+          <form
+            action={async () => {
+              "use server";
+              await signIn("github");
+              
+            }}
+          >
+            <button className="inline-flex justify-center rounded-lg text-sm items-center font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700  md:ml-8">
+              {" "}
+              <span className="pe-1">
+                <FaGithub />
+              </span>
+              Login With Github
+            </button>
+          </form>
         </div>
 
         <form action="" className="my-8 block w-[80%] mx-auto">
@@ -120,4 +135,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

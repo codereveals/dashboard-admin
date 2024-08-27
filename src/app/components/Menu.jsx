@@ -62,6 +62,12 @@ const menuData = [
     url: "/about",
     isSubmenu: false,
   },
+  {
+    id: 8,
+    name: "Blogs",
+    url:"/blogs"
+    
+},
 ];
 
 const Menu = () => {

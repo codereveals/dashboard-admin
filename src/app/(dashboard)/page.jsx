@@ -1,12 +1,19 @@
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
-import { FaUsersGear } from "react-icons/fa6";
+
 import Image from "next/image";
 import CardDash from "../components/CardDash";
 
-const Dashboard = () => {
+
+
+
+
+const Dashboard = async() => {
+
   return (
+
     <>
+  
       <Breadcrumb name="Dashboard" />
       {/* Card Design  */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -25,6 +32,7 @@ const Dashboard = () => {
           totalNumber="20"
           title="Total Posts"
         />
+
         <CardDash
           dynaClass="bg-orange-100"
           totalNumber="20"

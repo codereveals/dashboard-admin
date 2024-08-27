@@ -1,10 +1,11 @@
 "use client";
 
+import { auth } from "@/utils/auth";
+import { handleLogout, sessionData } from "@/utils/serverActions";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaBell } from "react-icons/fa6";
 import { RiMenu5Line } from "react-icons/ri";
-
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,23 +17,27 @@ const Header = () => {
     setIsNotifyOpen(!isNotifyOpen);
   };
 
-  const handleSidebarOpen =()=>{
-alert("clicked")
-  }
+  const handleSidebarOpen = () => {
+    alert("clicked");
+  };
+
   return (
     <header className="py-4 px-8 bg-purple-50 w-full flex justify-between">
       <div className="flex gap-5 items-center">
-      <div className="icon " onClick={handleSidebarOpen}>
+        <div className="icon " onClick={handleSidebarOpen}>
           <span className="cursor-pointer text-whte">
             {" "}
             <RiMenu5Line className="fill-slate-900" fontSize={30} />
           </span>
         </div>
         <div className="bg-white rounded-md px-3 py-1">
-
-        
-
-          <h2 className="font-bold text-md text-slate-800">Hi, John</h2>
+          <h2 className="font-bold text-md text-slate-800">
+            Hi,
+            {
+             
+            }
+          
+          </h2>
           <p className="text-slate-600 text-xs">Welcome Back </p>
         </div>
 
@@ -48,9 +53,9 @@ alert("clicked")
               height="24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="flex-none text-slate-300 dark:text-slate-400"
               aria-hidden="true"
             >
@@ -71,7 +76,7 @@ alert("clicked")
               aria-haspopup="true"
               onClick={toggleNotification}
             >
-              <div class="flex ">
+              <div className="flex ">
                 <FaBell fontSize={25} className="fill-slate-500" />
               </div>
             </button>
@@ -93,7 +98,7 @@ alert("clicked")
                   <li className="border-b-[1px] border-solid border-1 border-slate-100 pb-2 pt-2 px-3">
                     <div className="flex items-center">
                       <div>
-                        <div class="flex w-12 -space-x-2 overflow-hidden">
+                        <div className="flex w-12 -space-x-2 overflow-hidden">
                           <Image
                             width={32}
                             height={32}
@@ -108,14 +113,16 @@ alert("clicked")
                           New message from <strong>Bonnie Green</strong> : `Hey,
                           All set for the presentation?`
                         </p>
-                        <small className="text-sky-600 ">a few moments ago</small>
+                        <small className="text-sky-600 ">
+                          a few moments ago
+                        </small>
                       </div>
                     </div>
                   </li>
                   <li className="border-b-[1px] border-solid border-1 border-slate-100 pb-2 pt-2 px-3">
                     <div className="flex items-center">
                       <div>
-                        <div class="flex w-12 -space-x-2 overflow-hidden">
+                        <div className="flex w-12 -space-x-2 overflow-hidden">
                           <Image
                             width={32}
                             height={32}
@@ -130,14 +137,16 @@ alert("clicked")
                           New message from <strong>Bonnie Green</strong> : `Hey,
                           All set for the presentation?`
                         </p>
-                        <small className="text-sky-600">a few moments ago</small>
+                        <small className="text-sky-600">
+                          a few moments ago
+                        </small>
                       </div>
                     </div>
                   </li>
                   <li className="border-b-[1px] border-solid border-1 border-slate-100 pb-2 pt-2 px-3">
                     <div className="flex items-center">
                       <div>
-                        <div class="flex w-12 -space-x-2 overflow-hidden">
+                        <div className="flex w-12 -space-x-2 overflow-hidden">
                           <Image
                             width={32}
                             height={32}
@@ -152,7 +161,9 @@ alert("clicked")
                           New message from <strong>Bonnie Green</strong> : `Hey,
                           All set for the presentation?`
                         </p>
-                        <small className="text-sky-600">a few moments ago</small>
+                        <small className="text-sky-600">
+                          a few moments ago
+                        </small>
                       </div>
                     </div>
                   </li>
@@ -171,7 +182,7 @@ alert("clicked")
               aria-haspopup="true"
               onClick={toggleDropdown}
             >
-              <div class="flex -space-x-2 overflow-hidden">
+              <div className="flex -space-x-2 overflow-hidden">
                 <Image
                   width={32}
                   height={32}
@@ -180,7 +191,7 @@ alert("clicked")
                   alt="Avatar Image"
                 />
               </div>
-            
+
               <svg
                 className="-mr-1 h-5 w-5 text-gray-400"
                 viewBox="0 0 20 20"
@@ -188,9 +199,9 @@ alert("clicked")
                 aria-hidden="true"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             </button>
@@ -231,7 +242,7 @@ alert("clicked")
                 >
                   License
                 </a>
-                <form method="POST" action="#" role="none">
+                <form action={handleLogout} role="none">
                   <button
                     type="submit"
                     className="block w-full px-4 py-2 text-left text-sm text-gray-700"
