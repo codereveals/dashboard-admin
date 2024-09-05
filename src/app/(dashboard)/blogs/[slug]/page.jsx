@@ -1,10 +1,8 @@
-import PostUser from "@/app/components/PostUser";
-import { getPost } from "@/utils/data";
 import Image from "next/image";
 import React from "react";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`${process.env.DOMAIN_URL}/api/blog/${slug}`);
   if (!res.ok) {
     throw new Error("Something Went wrong");
   }
@@ -14,10 +12,10 @@ const getData = async (slug) => {
 
 const BlogDetailPage = async ({ params }) => {
   const { slug } = params;
-// With API 
+  // With API
   const blog = await getData(slug);
 
-  // Without API 
+  // Without API
   // const blog = await getPost(slug);
 
   return (

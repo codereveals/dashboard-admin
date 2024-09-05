@@ -4,11 +4,10 @@ import React from "react";
 
 // With an API
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog");
+  const res = await fetch(`${process.env.DOMAIN_URL}/api/blog`);
   if (!res.ok) {
     throw new Error("Something Went wrong");
   }
-
   return res.json();
 };
 

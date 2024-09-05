@@ -10,7 +10,7 @@ export const connectToDb = async () => {
 
   try {
     const { connection } = await mongoose.connect(process.env.MONGODB_URL, {
-      dbName: "nextlearn",
+
       useNewUrlParser: true,
       useUnifiedTopology: true,
       connectTimeoutMS: 30000, // 30 seconds timeout

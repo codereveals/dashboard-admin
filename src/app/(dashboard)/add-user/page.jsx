@@ -1,13 +1,14 @@
 import React from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 import Wrapper from "@/app/components/Wrapper";
+import { addUserProfile } from "@/utils/serverActions";
 
 const AddUser = () => {
   return (
     <div>
       <Breadcrumb name="Add User" subtitle="add-user" />
       <Wrapper>
-        <form>
+        <form action={addUserProfile}>
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -22,7 +23,7 @@ const AddUser = () => {
               <div className="w-full md:w-[49%]">
                   <div className="sm:col-span-4">
                     <label
-                      for="username"
+                      htmlFor="username"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
                       Username
@@ -36,7 +37,7 @@ const AddUser = () => {
                           type="text"
                           name="username"
                           id="username"
-                          autocomplete="username"
+                          autoComplete="username"
                           className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                           placeholder="janesmith"
                         />
@@ -46,45 +47,46 @@ const AddUser = () => {
                 </div>
                 <div className="w-full md:w-[49%]">
                   <label
-                    HTMLfor="price"
+                      htmlFor="email"
                     className="block text-sm font-medium leading-6 mb-1 text-gray-900"
+                      
                   >
                     Email Address
                   </label>
                   <input
                     type="text"
-                    name="price"
-                    id="price"
+                    name="email"
+                    id="email"
                     className="block w-full rounded-md border-0 py-2 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     placeholder="Enter Email"
                   />
                 </div>
                 <div className="w-full md:w-[49%]">
                   <label
-                    HTMLfor="price"
+                      htmlFor="firstName"
                     className="block text-sm font-medium leading-6 mb-1 text-gray-900"
                   >
                     First Name
                   </label>
                   <input
                     type="text"
-                    name="price"
-                    id="price"
+                    name="firstName"
+                    id="firstName"
                     className="block w-full rounded-md border-0 py-2 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     placeholder="Enter First Name"
                   />
                 </div>
                 <div className="w-full md:w-[49%]">
                   <label
-                    HTMLfor="price"
+                      htmlFor="lastName"
                     className="block text-sm font-medium leading-6 mb-1 text-gray-900"
                   >
                     Last Name
                   </label>
                   <input
                     type="text"
-                    name="price"
-                    id="price"
+                    name="lastName"
+                    id="lastName"
                     className="block w-full rounded-md border-0 py-2 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     placeholder="Enter Last Name"
                   />
@@ -92,25 +94,25 @@ const AddUser = () => {
                 
                 <div className="w-full md:w-[49%]">
                   <label
-                    HTMLfor="price"
+                      htmlFor="roles"
                     className="block text-sm font-medium leading-6 mb-1 text-gray-900"
                   >
                     Roles
                   </label>
-                  <select className="block w-full h-[40px] rounded-md border-0 py-2 pl-3 pr-20  ring-1 ring-inset ring-gray-300 text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                  <select name="roles" className="block w-full h-[40px] rounded-md border-0 py-2 pl-3 pr-20  ring-1 ring-inset ring-gray-300 text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     <option value="1" className="p-2">
                       {" "}
                       Select Roles
                     </option>
-                    <option value="1" className="p-2">
+                    <option value="admin" className="p-2">
                       {" "}
                       Admin
                     </option>
-                    <option value="1" className="p-2">
+                    <option value="Resource" className="p-2">
                       {" "}
-                      User
+                      Resource
                     </option>
-                    <option value="1" className="p-2">
+                    <option value="Publisher" className="p-2">
                       {" "}
                       Publisher
                     </option>
@@ -118,17 +120,17 @@ const AddUser = () => {
                 </div>
                 <div className="w-full md:w-[49%]">
                   <label
-                    HTMLfor="price"
+                      htmlFor="phone"
                     className="block text-sm font-medium leading-6 mb-1 text-gray-900"
                   >
-                    Department
+                    Phone number
                   </label>
                   <input
                     type="text"
-                    name="price"
-                    id="price"
+                    name="phone"
+                    id="phone"
                     className="block w-full rounded-md border-0 py-2 pl-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    placeholder="Enter Department"
+                    placeholder="Enter Phone"
                   />
                 </div>
               </div>
@@ -136,7 +138,7 @@ const AddUser = () => {
               <div className="mt-5 grid grid-cols-1 gap-x-6sm:grid-cols-6">
                 <div className="col-span-full">
                   <label
-                    for="about"
+                    htmlFor="about"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     About
@@ -156,7 +158,7 @@ const AddUser = () => {
 
                 <div className="col-span-full mt-5">
                   <label
-                    for="photo"
+                    htmlFor="photo"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     Photo
@@ -171,7 +173,7 @@ const AddUser = () => {
                       <path
                         fill-rule="evenodd"
                         d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                     <button
@@ -201,7 +203,7 @@ const AddUser = () => {
                         <path
                           fill-rule="evenodd"
                           d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                       <div className="mt-4 flex text-sm leading-6 text-gray-600">
@@ -239,17 +241,16 @@ const AddUser = () => {
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-4">
                   <label
-                    for="email"
+                    htmlFor="department"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Email address
+                    Department
                   </label>
                   <div className="mt-2">
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autocomplete="email"
+                      id="department"
+                      name="department"
+                      type="text"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -257,7 +258,7 @@ const AddUser = () => {
 
                 <div className="sm:col-span-3">
                   <label
-                    for="country"
+                    htmlFor="country"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     Country
@@ -266,7 +267,7 @@ const AddUser = () => {
                     <select
                       id="country"
                       name="country"
-                      autocomplete="country-name"
+                      autoComplete="country-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                     >
                       <option>United States</option>
@@ -278,7 +279,7 @@ const AddUser = () => {
 
                 <div className="col-span-full">
                   <label
-                    for="street-address"
+                    htmlFor="streetAddress"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     Street address
@@ -286,9 +287,9 @@ const AddUser = () => {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="street-address"
-                      id="street-address"
-                      autocomplete="street-address"
+                      name="streetAddress"
+                      id="streetAddress"
+                      autoComplete="street-address"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -296,7 +297,7 @@ const AddUser = () => {
 
                 <div className="sm:col-span-2 sm:col-start-1">
                   <label
-                    for="city"
+                    htmlFor="city"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     City
@@ -306,7 +307,7 @@ const AddUser = () => {
                       type="text"
                       name="city"
                       id="city"
-                      autocomplete="address-level2"
+                      autoComplete="address-level2"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -314,7 +315,7 @@ const AddUser = () => {
 
                 <div className="sm:col-span-2">
                   <label
-                    for="region"
+                    htmlFor="state"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     State / Province
@@ -322,9 +323,9 @@ const AddUser = () => {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="region"
-                      id="region"
-                      autocomplete="address-level1"
+                      name="state"
+                      id="state"
+                      autoComplete="address-level1"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -332,7 +333,7 @@ const AddUser = () => {
 
                 <div className="sm:col-span-2">
                   <label
-                    for="postal-code"
+                    for="postalCode"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     ZIP / Postal code
@@ -340,9 +341,8 @@ const AddUser = () => {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="postal-code"
-                      id="postal-code"
-                      autocomplete="postal-code"
+                      name="postalCode"
+                      id="postalCode"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>

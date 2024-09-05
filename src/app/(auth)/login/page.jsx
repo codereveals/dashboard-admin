@@ -1,16 +1,21 @@
-
-
 import Image from "next/image";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import { signIn, auth } from "@/utils/auth";
+import { handleGithubLogin } from "@/utils/serverActions";
 
 const Login = async () => {
-  const session = await auth();
-  console.log(session);
+  const session = await auth()
+  console.log(session)
+
+
+
+  if(session?.user){
+    redirect("/dashboard")
+  }
 
   return (
     <div className="h-screen flex gap-8 items-center ">
@@ -54,11 +59,7 @@ const Login = async () => {
             Login With Google
           </button>
           <form
-            action={async () => {
-              "use server";
-              await signIn("github");
-              
-            }}
+            action={handleGithubLogin}
           >
             <button className="inline-flex justify-center rounded-lg text-sm items-center font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700  md:ml-8">
               {" "}
